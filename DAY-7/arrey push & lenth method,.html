@@ -1,0 +1,30 @@
+<script>
+   
+
+   let fruits = []; // Step 1 : take empty array
+   let userInput = parseFloat(prompt('Enter a number for list')); // Step 2 : take userinput for length
+
+
+ 
+   for(let i=0;i<userInput;i++){
+
+       let item = prompt(`Enter item ${i+1}`); // take value of item
+
+        fruits.push(item); // send item value to fruits array
+
+   }
+
+
+
+   // iteration
+ 
+   for(let i=0;i<fruits.length;i++){
+
+        console.log(fruits[i]);
+
+   }
+
+
+
+
+</script>
