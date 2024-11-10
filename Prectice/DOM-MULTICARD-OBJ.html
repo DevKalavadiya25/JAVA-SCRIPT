@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Clone Navbar</title>
+    <link rel="stylesheet" href="DOM-PRECTICE-FORM.css">
+
+</head>
+
+<body id="root">
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <!-- Logo -->
+            <div class="logo">
+                <h1>Amazon.in</h1>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="text" placeholder="Search for products">
+                <button type="submit">🔍</button>
+            </div>
+
+            <!-- Right Section (Account, Orders, Cart) -->
+            <div class="navbar-links">
+                <a href="./validation-form.html">Hello, Sign In</a>
+                <a href="#">Returns & Orders</a>
+                <a href="#">Cart 🛒</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- //////////////////// SLIDER ////////////// -->
+
+    <swiper-container class="mySwiper" navigation="true">
+        <swiper-slide><img
+                src="https://m.media-amazon.com/images/G/31/img22/WLA/2024/Launches24/Realme/Studio_H1/Sale/D167025804_IN_WLA_Jupiter_Realme_H1_NewLaunch_1400x800_3._CB543663795_.jpg"
+                width="100%"></swiper-slide>
+        <swiper-slide><img
+                src="https://m.media-amazon.com/images/G/31/img22/WLA/2024/Jupiter24/Phase3/Uber/1400x800._CB545110565_.jpg"
+                alt=""></swiper-slide>
+        <swiper-slide><img
+                src="https://m.media-amazon.com/images/G/31/img22/WLA/2024/Jupiter24/Phase3/BxGy/D168463738_IN_WLA_BxGy-Jupiter-24P3_WLA_1400x800._CB545103385_.jpg"
+                alt=""></swiper-slide>
+        <swiper-slide><img
+                src="https://m.media-amazon.com/images/G/31/img22/WLA/2024/Jupiter24/Phase1/OOC_STORE/PHASE_3/HEADERS/D163262113_IN_WLA_JUPITER24_INTERNATIONAL_STORE_1400x800_1._CB545108277_.jpg"
+                alt=""></swiper-slide>
+    </swiper-container>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <br>
+
+    <!-- ////////////////// WRAPPER & CARDS //////////////////// -->
+
+    <div class="wrapper" id="wrapper">
+
+        <!-- <div class="card" id="card">
+            <img src="https://m.media-amazon.com/images/I/41E+x6S2PoL._AC_UY327_FMwebp_QL65_.jpg" alt="firestick"
+                width="100%" height="60%">
+
+            <p><strong>Amazon Fire TV Stick with Alexa Voice Remote (includes TV and app controls) | HD streaming device
+                </strong></p> <br>
+
+            <h3 class="price">₹ 3,999.00</h3><br>
+
+            <button>Buy Now !</button>
+            <button>Add To Cart !</button>
+        </div> -->
+
+        <!-- ////// Dynamic card-->
+
+
+        <script>
+
+            setTimeout(() => {
+               alert ('Please Login The Form Now.... ‼️')
+            }, 3000)
+
+            let Amazon = [
+                {
+                    image: 'https://m.media-amazon.com/images/I/41E+x6S2PoL._AC_UY327_FMwebp_QL65_.jpg',
+                    // title: 'Firestick',
+                    description: 'Amazon Fire TV Stick with Alexa Voice Remote (includes TV and app controls) | HD streaming device',
+                    price: '₹ 3,999.00',
+                    inStock: true
+                },
+                {
+
+                    image: 'https://m.media-amazon.com/images/I/715aoVxQNTL._AC_UY327_FMwebp_QL65_.jpg',
+                    // title: 'Motorola Edge 50 pro 5G',
+                    description: 'Motorola Edge 50 Pro 5G with 125W Charger (Luxe Lavender, 256 GB) (12 GB RAM)',
+                    price: '₹ 31,999.00',
+                    inStock: true
+                },
+                {
+                    image: 'https://m.media-amazon.com/images/I/71c3EH8FoWL._AC_UY327_FMwebp_QL65_.jpg',
+                    // title: 'One Plus 12R',
+                    description: 'OnePlus 12R (Cool Blue, 8GB RAM, 256GB Storage)',
+                    price: '₹ 36,999.00',
+                    inStock: true
+                },
+
+                {
+                    image: 'https://m.media-amazon.com/images/I/713SsA7gftL._AC_UL480_FMwebp_QL65_.jpg',
+                    // title: 'One Plus 12R',
+                    description: 'Apple iPhone 16 Plus (128 GB) - White',
+                    price: '₹ 89,999.00',
+                    inStock: true
+                },
+
+                {
+                    image: 'https://m.media-amazon.com/images/I/61qV17Px4NL._AC_UL480_FMwebp_QL65_.jpg',
+                    description: 'Apple iPhone 16 Pro (1 TB) - Natural Titanium',
+                    price: '₹ 1,69,999.00',
+                    inStock: true
+                },
+
+                {
+                    image: 'https://images-eu.ssl-images-amazon.com/images/I/51bbhEaT0ZL._AC_UL165_SR165,165_.jpg',
+                    // title: 'One Plus 12R',
+                    description: 'Amazon Ethernet Adapter for Amazon Fire TV Stick',
+                    price: '₹ 1,499.00',
+                    inStock: true
+                },
+
+                {
+                    image: 'https://images-eu.ssl-images-amazon.com/images/I/81BJxFQ9oZL._AC_UL165_SR165,165_.jpg',
+                    // title: 'One Plus 12R',
+                    description: 'All-new Fire TV Cube | Hands-free streaming device with Alexa, Wi-Fi 6, 4K Ultra HD',
+                    price: '₹ 12,999.00',
+                    inStock: true
+                },
+
+                {
+                    image: 'https://images-eu.ssl-images-amazon.com/images/I/71nulLJ9VmL._AC_UL165_SR165,165_.jpg',
+                    // title: 'One Plus 12R',
+                    description: 'Roku Streaming Stick 4K | Portable Roku Streaming Device 4K/HDR/Dolby Vision, ',
+                    price: '₹ 36,999.00',
+                    inStock: true
+                },
+
+                {
+                    image: 'https://m.media-amazon.com/images/I/61OCEZsP6ML._AC_UY327_FMwebp_QL65_.jpg',
+                    // title: 'One Plus 12R',
+                    description: 'HFEHSKJ 3D Galaxy Crystal Ball Night Light,',
+                    price: '₹ 299.00',
+                    inStock: true
+                },
+
+                {
+                    image: 'https://m.media-amazon.com/images/I/51lMGj6RiqL._SY445_SX342_QL70_FMwebp_.jpg',
+                    // title: 'One Plus 12R',
+                    description: 'Plastic Led Bonsai Table Lamp,,Spaces Decoration(Gold)',
+                    price: '₹679.00',
+                    inStock: true
+                }
+            ]
+
+            Amazon.forEach((value) => {
+
+                let card = document.createElement('div');
+                card.id = 'card';
+
+                let img = document.createElement('img');
+                img.src = value.image;
+                card.appendChild(img);
+
+                // let p = document.createElement('p');
+                // let strong = document.createElement('strong');
+                // strong.textContent = value.title;
+                // p.appendChild(strong);
+                // card.appendChild(p);
+
+                let description = document.createElement('p');
+                description.textContent = value.description;
+                card.appendChild(description);
+
+                let br = document.createElement('br');
+                card.appendChild(br);
+
+                let price = document.createElement('h3');
+                price.className = 'price'
+                price.textContent = value.price;
+                card.appendChild(price);
+
+                let br2 = document.createElement('br');
+                card.appendChild(br2);
+
+
+                let btn = document.createElement('button');
+                btn.textContent = 'Buy Now !'
+                card.appendChild(btn);
+
+                let btn2 = document.createElement('button');
+                btn2.textContent = 'Add To Cart !'
+                card.appendChild(btn2);
+
+                // console.log(card);
+                document.getElementById('wrapper').appendChild(card);
+
+            })
+
+        </script>
+
+</body>
+
+</html>

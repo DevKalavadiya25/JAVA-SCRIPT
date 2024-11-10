@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1AccA6_Q20d5xRUmH0Oe-vQ0XfHEk9enITA&s"id="img" alt="image">
+      
+    <h1 id="myHeading"></h1>
+    <div class="my">
+        text
+    </div>
+
+    <p id="myPara">
+        text
+    </p>
+
+
+    <script>
+        let img = document.getElementById('img');
+        let src = img.setAttribute('src', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8mEIWZjRFdiO4YIkq790lTaNzTtCH6DcwrQ&s');
+
+        let myHeading = document.getElementById('myHeading').append('Hello world');
+        let my = document.querySelector('.my').append('this is text')
+
+        let para = document.getElementById('myPara').innerHTML = '<h1> Hello ji </h1>';
+
+        document.querySelector('.my').style.color = 'red';
+
+
+    </script>
+
+</body>
+
+</html>

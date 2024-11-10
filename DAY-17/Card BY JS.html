@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+
+    <style>
+        .card{
+            width: 250px;
+            height: auto;
+            border:1px solid #ccc;
+        }
+
+        .img{
+            width: 100%;
+            aspect-ratio: 1/1;
+        }
+
+        .wrapper{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+        }
+    </style>
+
+</head>
+<body id="body">
+
+    <div class="wrapper">
+
+       
+    </div>
+
+   
+    <script>
+        let wrapper =  document.querySelector('.wrapper');
+       
+        let card = document.createElement('div');
+        card.className = 'card';
+
+        let img = document.createElement('img');
+        img.src = 'https://www.foodandwine.com/thmb/Wd4lBRZz3X_8qBr69UOu2m7I2iw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/classic-cheese-pizza-FT-RECIPE0422-31a2c938fc2546c9a07b7011658cfd05.jpg';
+        img.className = 'img'
+        card.appendChild(img);
+
+        let h1 = document.createElement('h1');
+        h1.textContent = 'Card Product name';
+        card.appendChild(h1);
+
+
+        let para = document.createElement('p');
+        para.textContent = 'Lorem, ipsum dolor sit amet consectetur ';
+        card.appendChild(para);
+       
+
+        wrapper.appendChild(card)
+    </script>
+</body>
+</html>

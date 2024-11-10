@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document-Object-Model-2</title>
+</head>
+
+<style>
+    * {
+
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .wrapper {
+        width: 30%;
+        height: 530px;
+        /* border:1px solid red; */
+        margin: 0 auto;
+        padding-top: 25px;
+        display: flex;
+
+    }
+
+    .card {
+        width: 300px;
+        height: 530px;
+        border: 1px solid rgb(90, 88, 88);
+        margin: 0 auto;
+        background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+        padding: 10px 10px;
+        overflow: hidden;
+        box-shadow: 2px 0px 11px 3px grey;
+        border-radius: 15px;
+    }
+
+    img {
+        width: 100%;
+        transition: ease 1s;
+    }
+
+    img:hover {
+        scale: 1.1;
+
+    }
+
+    p,
+    h1 {
+        text-align: left;
+        margin-top: 15px;
+
+    }
+
+    h2 {
+        margin-top: 15px;
+    }
+
+    button {
+        background: rgb(140, 138, 138);
+        color: aliceblue;
+        padding: 5px 7px;
+        gap: 15px;
+        margin: 5px;
+        justify-content: space-evenly;
+        text-align: center;
+    }
+
+    button:hover {
+        background: rgb(217, 81, 81);
+        color: black;
+        transition: all 1s;
+    }
+</style>
+
+<body>
+
+    <div class="wrapper">
+        <!-- <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGMDCUebbU7kYVfyLPqTj9Joxfo64GQz_IIg&s" alt=""width="100%">
+
+            <h1>Lemborginni</h1>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, unde.</p>
+        </div> -->
+    </div>
+
+
+    <script>
+
+        let wrapper = document.querySelector('.wrapper');
+        let card = document.createElement('div');
+        card.className = 'card';
+
+        let img = document.createElement('img');
+        img.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGMDCUebbU7kYVfyLPqTj9Joxfo64GQz_IIg&s'
+        img.className = 'img';
+        card.appendChild(img);
+
+        let h1 = document.createElement('h1');
+        h1.textContent = 'Lamborginni';
+        card.appendChild(h1);
+
+        let pera = document.createElement('p');
+        pera.textContent = 'Legender';
+        card.appendChild(pera);
+
+        let h2 = document.createElement('h2');
+        h2.textContent = 'price : $120';
+        card.appendChild(h2);
+
+        let button = document.createElement('button');
+        button.textContent = 'Buy Now';
+        card.appendChild(button);
+
+        let button2 = document.createElement('button');
+        button2.textContent = 'Add to Cart';
+        card.appendChild(button2);
+
+
+        wrapper.appendChild(card);
+
+
+
+    </script>
+
+</body>
+
+</html>

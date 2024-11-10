@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Cards Form with Navbar</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: url('https://img.freepik.com/free-vector/dark-blue-tone-memphis-design-element-pack_53876-114365.jpg?t=st=1729658502~exp=1729662102~hmac=65d29ea49e1dd8ad203014680f1d1cd21eceff5f9e98281585d80f44e30fef77&w=996');
+            margin: 0;
+            padding: 0;
+        }
+
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.4);
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(2px);
+            border: 1px solid #000;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: 1px solid #000;
+            background-color: rgba(178, 163, 163, 0.303);
+            border-radius: 8px;
+        }
+
+        input::placeholder {
+            color: #151515;
+        }
+
+        button {
+            background: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+            transition: 0.5s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(to top, #d455d4 0%, #97d9e1 100%);
+            color: #000;
+            transform: scale(1.05);
+        }
+
+        .cards-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 60%;
+            max-width: 800px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            background-color: #fbaaaa;
+            border: 1px solid #000;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+            width: 50%;
+            transition: transform 0.2s;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            font-size: 1.2em;
+            border-bottom: 1px solid #000;
+            padding-bottom: 5px;
+        }
+
+        .card p {
+            margin: 10px 0;
+            font-size: 1em;
+        }
+
+        #errorMsg {
+            color: rgb(241, 39, 39);
+        }
+
+        #successMsg {
+            color: rgb(54, 230, 54);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <h2>Signup Form</h2>
+        <form id="userForm">
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="tel" id="number" placeholder="Phone Number" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <input type="password" id="cpassword" placeholder="Confirm Password" required>
+
+            <button type="submit">Submit</button>
+
+            <p id="errorMsg"></p>
+            <p id="successMsg"></p>
+        </form>
+    </div>
+
+    <div class="cards-container" id="cardsContainer"></div>
+
+    <script>
+        const form = document.getElementById("userForm");
+        const errorMsg = document.getElementById("errorMsg");
+        const successMsg = document.getElementById("successMsg");
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const userInfo = {
+                name: document.getElementById('name').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                number: document.getElementById('number').value.trim(),
+                password: document.getElementById('password').value.trim(),
+                cpassword: document.getElementById('cpassword').value.trim(),
+            };
+
+            validate(userInfo);
+        });
+
+        function validate(userInfo) {
+            errorMsg.textContent = "";
+            successMsg.textContent = "";
+
+            if (!/^[A-Za-z]{2,}$/.test(userInfo.name)) {
+                errorMsg.textContent = "Please enter a valid name";
+                return;
+            }
+
+            if (!/^\d{10}$/.test(userInfo.number)) {
+                errorMsg.textContent = "Please enter a valid 10-digit phone number";
+                return;
+            }
+
+            if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[A-Za-z\d\W_]{8,}$/.test(userInfo.password)) {
+                errorMsg.textContent = "Please use a strong password";
+                return;
+            }
+
+            if (!/^\S+@\S+\.\S+$/.test(userInfo.email)) {
+                errorMsg.textContent = "Please enter a valid email address";
+                return;
+            }
+
+            if (userInfo.password !== userInfo.cpassword) {
+                errorMsg.textContent = "Passwords do not match! ❌";
+            } else {
+                successMsg.textContent = "Form submitted successfully! ✅";
+                form.reset(); // Clear the form after successful submission
+                createCard(userInfo); // Create a card with user info
+            }
+
+            
+        }
+
+        function createCard(userInfo) {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <h3>${userInfo.name}</h3>
+                <p>Email: ${userInfo.email}</p>
+                <p>Phone: ${userInfo.number}</p>
+            `;
+            document.getElementById('cardsContainer').appendChild(card);
+        }
+    </script>
+
+</body>
+
+</html>

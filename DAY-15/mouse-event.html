@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button onclick="greet()">on click</button>
+    <button ondblclick="greet()">dbl click</button>
+    <button onmouseenter="greet()">Mouse Enter</button>
+
+
+    <script>
+
+        function greet() {
+            let name = prompt('Enter your name');
+            alert(`Hello ${name}`);
+        }
+
+
+    </script>
+
+</body>
+
+</html>

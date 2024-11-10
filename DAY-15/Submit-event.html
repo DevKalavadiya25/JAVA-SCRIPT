@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            height: 500vh;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <form id="myform">
+
+        <input type="text" id="name" placeholder="name"> <br><br>
+        <input type="email" id="email" placeholder="email"><br><br>
+
+        <button type="submit">click</button>
+
+    </form>
+
+    <script>
+        let form = document.getElementById('myform');
+
+
+        form.addEventListener('submit', (event) => {
+
+            event.preventDefault() // page ko reset hone se rokega
+
+            let username = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+
+            console.log(username, email)
+
+        })
+
+    </script>
+
+</body>
+
+</html>
